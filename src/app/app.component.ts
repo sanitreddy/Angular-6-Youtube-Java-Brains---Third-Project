@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { TestService } from './test.service';
+
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'third-project';
+  buttonStatus = true;
+
+  constructor(private svc: TestService) {
+    this.svc.printToConsole('Got the service');
+  }
+
+  ngOnInit() {
+  }
+
 }
